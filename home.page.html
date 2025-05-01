@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Senha App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Tela 1: Senha -->
+  <div *ngIf="tela === 'senha'">
+    <h2>Crie sua senha</h2>
+    <ion-input [(ngModel)]="senha" type="password" placeholder="Senha"></ion-input><br><br>
+    <ion-input [(ngModel)]="confirmar" type="password" placeholder="Confirmar senha"></ion-input><br><br>
+    <ion-button expand="block" (click)="verificarSenha()">Entrar</ion-button>
+    <p *ngIf="erro" style="color:red;">{{ erro }}</p>
+  </div>
+
+  <!-- Tela 2: Opções -->
+  <div *ngIf="tela === 'opcoes'">
+    <h2>Opções</h2>
+    <ion-button expand="block" [color]="ativo[0] ? 'success' : 'medium'" (click)="toggle(0)">Opção 1</ion-button>
+    <ion-button expand="block" [color]="ativo[1] ? 'success' : 'medium'" (click)="toggle(1)">Opção 2</ion-button>
+    <ion-button expand="block" [color]="ativo[2] ? 'success' : 'medium'" (click)="toggle(2)">Opção 3</ion-button>
+    <ion-button expand="block" [color]="ativo[3] ? 'success' : 'medium'" (click)="toggle(3)">Opção 4</ion-button>
+    <ion-button expand="block" [color]="ativo[4] ? 'success' : 'medium'" (click)="toggle(4)">Opção 5</ion-button>
+  </div>
+</ion-content>
